@@ -2,7 +2,7 @@
  * LCD.h
  *
  *  Created on: Feb 3, 2015
- *      Author: Luis Ivan Escamilla Estrada / Francisco Javier Diaz Sanchez
+ *      Author: Luis Ivan Escamilla Estrada
  */
 
 #ifndef LCD_H_

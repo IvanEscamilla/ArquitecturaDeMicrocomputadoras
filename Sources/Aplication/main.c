@@ -13,7 +13,7 @@ typedef enum
 	eWaitMode,
 	eErrorState
 }_eSystemState;
-
+U08 Message[16] = "Hola Mundo!!";
 u32 SchedulerSuspended = FALSE;
 u32 TaskRunning = 0;
 u32 TaskCount = 0;
@@ -25,6 +25,7 @@ void vfnSetClk48MHZ(void);
 void StartScheduler(void);
 void MAIN_vfnIdleTask(void);
 void LCD_Task(void);
+void LCD_PrintTask(void);
 
 extern void SysTick_Config();
 void SysTick_Stop(); 
@@ -34,9 +35,16 @@ extern void Scheduler_Init();
 int main(void)
 {
 	vfnSetClk48MHZ();
+	TimeBaseGenerator_Init();
+	LCD_vFnInit();
+	/*Needed for first run*/
+	//TBG_RELOAD_TIMER_CHN(TIMER_LED,TIME_INIT);
+	//TBG_RELOAD_TIMER_CHN(TIMER_DEBOUNCE,TIME_INIT);
+	
 	TASK_vfnTaskCreate(MAIN_vfnIdleTask,NULL,&main_stack[GetTaskCount()][STACKSIZE-1],TaskID_0);
 	TASK_vfnTaskCreate(LCD_Task,NULL,&main_stack[GetTaskCount()][STACKSIZE-1],TaskID_1);
-	
+	TASK_vfnTaskCreate(LCD_PrintTask,NULL,&main_stack[GetTaskCount()][STACKSIZE-1],TaskID_2);
+
 	StartScheduler();
 	
 	for(;;){	 
@@ -123,6 +131,15 @@ void MAIN_vfnIdleTask(void)
 void LCD_Task(void)
 {
 	for(;;){
+		LCD_vFnTask();
+	}
+}
+
+void LCD_PrintTask(void){
+	for(;;){
+		if(LCD_gu8Status == eLCD_OK){
+			LCD_vfnWriteMessage((U08*)&Message, wfnStrLen((U08*)&Message));
+		}
 	}
 }
 

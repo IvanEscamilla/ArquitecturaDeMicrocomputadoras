@@ -33,7 +33,7 @@ void TimeBaseGenerator_Init(void)
     }
     
     /* Enable FlexTimerA low level driver */
-    TIMERA_INIT();
+    //TIMERA_INIT();
     TBG_gCounter = 0xFFFF;
     TA_g1msFlag = FALSE;
 }
