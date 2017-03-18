@@ -62,6 +62,6 @@ SUBDIRS := \
 Sources/Service_Layer \
 Sources/Hardware_Independent_Layer \
 Sources/Hardware_Abstraction_Layer \
-Sources/Aplication \
+Sources/Application \
 Project_Settings/Startup_Code \
 

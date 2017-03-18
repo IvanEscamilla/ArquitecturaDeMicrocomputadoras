@@ -6,6 +6,7 @@
 #include "derivative.h" /* include peripheral declarations */
 #include "MyTypes.h"
 #include "Task.h"
+#include "../Hardware_Independent_Layer/LCD.h"
 
 typedef enum
 {
@@ -14,6 +15,7 @@ typedef enum
 	eErrorState
 }_eSystemState;
 U08 Message[16] = "Hola Mundo!!";
+U08 onePrint = 1;
 u32 SchedulerSuspended = FALSE;
 u32 TaskRunning = 0;
 u32 TaskCount = 0;
@@ -132,12 +134,20 @@ void LCD_Task(void)
 {
 	for(;;){
 		LCD_vFnTask();
+		TBG_SOFTWARE_FLG();
+				
+		if(TBG_Polling_ISR_FLG)
+		{
+			TBG_CLEAR_SOFTWARE_FLG;
+			TBG_RefreshChannels();
+		}
 	}
 }
 
 void LCD_PrintTask(void){
 	for(;;){
-		if(LCD_gu8Status == eLCD_OK){
+		if(LCD_gu8Status == eLCD_OK && onePrint){
+			onePrint--;
 			LCD_vfnWriteMessage((U08*)&Message, wfnStrLen((U08*)&Message));
 		}
 	}

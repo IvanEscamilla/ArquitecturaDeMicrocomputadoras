@@ -39,42 +39,42 @@
 	#define CLOCK48M		48000000
 #endif
 
-
-typedef enum
-{
-	eNVIC_DMA0 = 0,
-	eNVIC_DMA1,
-	eNVIC_DMA2,
-	eNVIC_DMA3,
-	eNVIC_RESERVED1,
-	eNVIC_FTFA, //5
-	eNVIC_PMC,
-	eNVIC_LLWU,
-	eNVIC_I2C0,
-	eNVIC_I2C1,
-	eNVIC_SPI0, //10
-	eNVIC_SPI1,
-	eNVIC_UART0,
-	eNVIC_UART1,
-	eNVIC_UART2,
-	eNVIC_ADC0, //15
-	eNVIC_CMP0,
-	eNVIC_TPM0,
-	eNVIC_TPM1,
-	eNVIC_TPM2,
-	eNVIC_RTC_ALARM, //20
-	eNVIC_RTC_SEC,
-	eNVIC_PIT,
-	eNVIC_RESERVED2,
-	eNVIC_USB_OTG,
-	eNVIC_DAC0,  //25
-	eNVIC_TSI0,
-	eNVIC_MCG,
-	eNVIC_LPTMR0,
-	eNVIC_RESERVED3,
-	eNVIC_PORTA, //30
-	eNVIC_PORTD
-}_eNVIC_INT;
+//
+//typedef enum
+//{
+//	eNVIC_DMA0 = 0,
+//	eNVIC_DMA1,
+//	eNVIC_DMA2,
+//	eNVIC_DMA3,
+//	eNVIC_RESERVED1,
+//	eNVIC_FTFA, //5
+//	eNVIC_PMC,
+//	eNVIC_LLWU,
+//	eNVIC_I2C0,
+//	eNVIC_I2C1,
+//	eNVIC_SPI0, //10
+//	eNVIC_SPI1,
+//	eNVIC_UART0,
+//	eNVIC_UART1,
+//	eNVIC_UART2,
+//	eNVIC_ADC0, //15
+//	eNVIC_CMP0,
+//	eNVIC_TPM0,
+//	eNVIC_TPM1,
+//	eNVIC_TPM2,
+//	eNVIC_RTC_ALARM, //20
+//	eNVIC_RTC_SEC,
+//	eNVIC_PIT,
+//	eNVIC_RESERVED2,
+//	eNVIC_USB_OTG,
+//	eNVIC_DAC0,  //25
+//	eNVIC_TSI0,
+//	eNVIC_MCG,
+//	eNVIC_LPTMR0,
+//	eNVIC_RESERVED3,
+//	eNVIC_PORTA, //30
+//	eNVIC_PORTD
+//}_eNVIC_INT;
 /*************************************************************************************************/
 /*********************                      Typedefs                        **********************/
 /*************************************************************************************************/

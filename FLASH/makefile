@@ -17,7 +17,7 @@ RM := "$(GNU_Make_Install_DirEnv)/rm" -rf
 -include Sources/Service_Layer/subdir.mk
 -include Sources/Hardware_Independent_Layer/subdir.mk
 -include Sources/Hardware_Abstraction_Layer/subdir.mk
--include Sources/Aplication/subdir.mk
+-include Sources/Application/subdir.mk
 -include Project_Settings/Startup_Code/subdir.mk
 -include objects.mk
 
