@@ -24,6 +24,15 @@ extern void __thumb_startup(void);
 
 /**
  **===========================================================================
+ **  Own External declaretions
+ **===========================================================================
+ */
+
+extern void TimerA_ISR(void);
+
+
+/**
+ **===========================================================================
  **  Default interrupt handler
  **===========================================================================
  */
@@ -121,7 +130,7 @@ void (* const InterruptVector[])() __attribute__ ((section(".vectortable"))) = {
     UART2_IRQHandler, /* UART2 Status and Error interrupt */
     ADC0_IRQHandler, /* ADC0 interrupt */
     CMP0_IRQHandler, /* CMP0 interrupt */
-    FTM0_IRQHandler, /* FTM0 fault, overflow and channels interrupt */
+    TimerA_ISR, /* FTM0 fault, overflow and channels interrupt */
     FTM1_IRQHandler, /* FTM1 fault, overflow and channels interrupt */
     FTM2_IRQHandler, /* FTM2 fault, overflow and channels interrupt */
     RTC_Alarm_IRQHandler, /* RTC Alarm interrupt */
