@@ -7,6 +7,7 @@
 #include "MyTypes.h"
 #include "Task.h"
 #include "../Hardware_Independent_Layer/LCD.h"
+#include "../Hardware_Independent_Layer/TFT_SPI.h"
 
 typedef enum
 {
@@ -28,6 +29,7 @@ void StartScheduler(void);
 void MAIN_vfnIdleTask(void);
 void LCD_Task(void);
 void LCD_PrintTask(void);
+void TFT_Task(void);
 
 extern void SysTick_Config();
 void SysTick_Stop(); 
@@ -36,17 +38,20 @@ extern void Scheduler_Init();
 
 int main(void)
 {
-	vfnSetClk48MHZ();
-	TimeBaseGenerator_Init();
-	LCD_vFnInit();
+	//vfnSetClk48MHZ();
+	//TimeBaseGenerator_Init();
+	//LCD_vFnInit();
+	spi1_init();   //Init SPI1
+    tft_initial();
 	/*Needed for first run*/
 	//TBG_RELOAD_TIMER_CHN(TIMER_LED,TIME_INIT);
 	//TBG_RELOAD_TIMER_CHN(TIMER_DEBOUNCE,TIME_INIT);
 	
 	TASK_vfnTaskCreate(MAIN_vfnIdleTask,NULL,&main_stack[GetTaskCount()][STACKSIZE-1],TaskID_0);
-	TASK_vfnTaskCreate(LCD_Task,NULL,&main_stack[GetTaskCount()][STACKSIZE-1],TaskID_1);
-	TASK_vfnTaskCreate(LCD_PrintTask,NULL,&main_stack[GetTaskCount()][STACKSIZE-1],TaskID_2);
-
+	//TASK_vfnTaskCreate(LCD_Task,NULL,&main_stack[GetTaskCount()][STACKSIZE-1],TaskID_1);
+	//TASK_vfnTaskCreate(LCD_PrintTask,NULL,&main_stack[GetTaskCount()][STACKSIZE-1],TaskID_2);
+	TASK_vfnTaskCreate(TFT_Task,NULL,&main_stack[GetTaskCount()][STACKSIZE-1],TaskID_1);
+		
 	StartScheduler();
 	
 	for(;;){	 
@@ -127,6 +132,18 @@ void MAIN_vfnIdleTask(void)
 	for(;;)
 	{
 		
+	}
+}
+
+
+void TFT_Task(void)
+{
+	unsigned long color = 0x00;
+	set_color_background(BLACK);
+	show_pic();
+	for(;;)
+	{
+		//set_color_background(color++);		
 	}
 }
 

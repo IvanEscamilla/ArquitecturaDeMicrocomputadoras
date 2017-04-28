@@ -12,6 +12,8 @@
 	 * 1s				0x002DC6C0
 	 **/
 	.set SYST_RVR_VAL, 	0x000249F0
+	/*.set SYST_RVR_VAL, 	0x002DC6C0
+	*/
 	.set SYST_CVR_ADD,	0xe000e018
 	.set SYST_CVR_VAL, 	0x00000000
 	

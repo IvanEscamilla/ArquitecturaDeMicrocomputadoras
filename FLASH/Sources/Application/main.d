@@ -33,7 +33,11 @@ Sources/Application/main.o: ../Sources/Application/main.c \
  C:/Users/Luis\ Ivan\ Escamilla/Documents/GitHub/ArquitecturaDeMicrocomputadoras/Project_Headers/StandarLibrary.h \
  ../Sources/Application/../Hardware_Independent_Layer/../Hardware_Abstraction_Layer/GPIO.h \
  ../Sources/Application/../Hardware_Independent_Layer/TimeBaseGen.h \
- ../Sources/Application/../Hardware_Independent_Layer/../Hardware_Abstraction_Layer/TimerA.h
+ ../Sources/Application/../Hardware_Independent_Layer/../Hardware_Abstraction_Layer/TimerA.h \
+ ../Sources/Application/../Hardware_Independent_Layer/TFT_SPI.h \
+ C:/Freescale/CW\ MCU\ v10.7/MCU/ARM_GCC_Support/ewl/EWL_C/include/string.h \
+ C:/Freescale/CW\ MCU\ v10.7/MCU/ARM_GCC_Support/ewl/EWL_C/include/cstring \
+ C:/Freescale/CW\ MCU\ v10.7/MCU/ARM_GCC_Support/ewl/EWL_C/include/string_api.h
 
 C:/Freescale/CW\ MCU\ v10.7/MCU/ARM_GCC_Support/ewl/EWL_C/include/lib_ewl.prefix:
 
@@ -104,3 +108,11 @@ C:/Users/Luis\ Ivan\ Escamilla/Documents/GitHub/ArquitecturaDeMicrocomputadoras/
 ../Sources/Application/../Hardware_Independent_Layer/TimeBaseGen.h:
 
 ../Sources/Application/../Hardware_Independent_Layer/../Hardware_Abstraction_Layer/TimerA.h:
+
+../Sources/Application/../Hardware_Independent_Layer/TFT_SPI.h:
+
+C:/Freescale/CW\ MCU\ v10.7/MCU/ARM_GCC_Support/ewl/EWL_C/include/string.h:
+
+C:/Freescale/CW\ MCU\ v10.7/MCU/ARM_GCC_Support/ewl/EWL_C/include/cstring:
+
+C:/Freescale/CW\ MCU\ v10.7/MCU/ARM_GCC_Support/ewl/EWL_C/include/string_api.h:

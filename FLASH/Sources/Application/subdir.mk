@@ -52,7 +52,7 @@ OBJS_OS_FORMAT += \
 # Each subdirectory must supply rules for building sources it contributes
 Sources/Application/Dispatcher.o: ../Sources/Application/Dispatcher.s
 	@echo 'Building file: $<'
-	@echo 'Executing target #7 $<'
+	@echo 'Executing target #10 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC Assembler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/Application/Dispatcher.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/Application/Dispatcher.o"
 	@echo 'Finished building: $<'
@@ -60,7 +60,7 @@ Sources/Application/Dispatcher.o: ../Sources/Application/Dispatcher.s
 
 Sources/Application/main.o: ../Sources/Application/main.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #8 $<'
+	@echo 'Executing target #11 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/Application/main.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/Application/main.o"
 	@echo 'Finished building: $<'
@@ -68,7 +68,7 @@ Sources/Application/main.o: ../Sources/Application/main.c
 
 Sources/Application/sa_mtb.o: ../Sources/Application/sa_mtb.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #9 $<'
+	@echo 'Executing target #12 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/Application/sa_mtb.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/Application/sa_mtb.o"
 	@echo 'Finished building: $<'
