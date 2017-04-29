@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-#Progress monitor hint: 12
+#Progress monitor hint: 15
 first : all
 -include ../makefile.init
 
@@ -46,13 +46,10 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-ArquitecturaDeMicrocomputadoras.elf \
 
 EXECUTABLES_QUOTED += \
-"ArquitecturaDeMicrocomputadoras.elf" \
 
 EXECUTABLES_OS_FORMAT += \
-ArquitecturaDeMicrocomputadoras.elf \
 
 
 # All Target
@@ -61,7 +58,7 @@ all: warning-messages explicit-dependencies ArquitecturaDeMicrocomputadoras.elf 
 # Tool invocations
 ArquitecturaDeMicrocomputadoras.elf: $(OBJS) $(USER_OBJS) ../Project_Settings/Linker_Files/MKL25Z128_flash.ld
 	@echo 'Building target: $@'
-	@echo 'Executing target #13 $@'
+	@echo 'Executing target #16 $@'
 	@echo 'Invoking: ARM Ltd Windows GCC C Linker'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc"  $(USER_OBJS_QUOTED) $(LIBS_QUOTED) @"ArquitecturaDeMicrocomputadoras.args" -o"ArquitecturaDeMicrocomputadoras.elf"
 	@echo 'Finished building target: $@'
